@@ -56,14 +56,14 @@ pipeline { // must be top-level
 
 				//env
 				echo "deploying with ${SERVER_CREDENTIALS}"
-				sh "${SERVER_CREDENTIALS}"		
+				//sh "${SERVER_CREDENTIALS}"		
 
 				//crediantils binding
-				withCredentials([
-					usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
-				]) {
-					sh "some script ${USER} ${PWD}"
-				}
+				//withCredentials([
+				//	usernamePassword(credentials: 'server-credentials', usernameVariable: USER, passwordVariable: PWD)
+				//]) {
+				//	sh "some script ${USER} ${PWD}"
+				//}
 			}
 		}
 	}
