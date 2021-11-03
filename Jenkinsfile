@@ -1,10 +1,6 @@
-CODE_CHANGES = getGitChanges()
 pipeline { // must be top-level
 	
 	agent any // where to execute
-	tools {
-		maven 'Maven'
-	}
 	parameters {
 		string(name: 'VERSION', defaultValue: '', description: 'version to deploy on prod')
 		choice(name: 'VERSION', choices: ['1.1.0','1.2.0','1.3.0'], description: '')
@@ -71,14 +67,5 @@ pipeline { // must be top-level
 			}
 		}
 	}
-	post {
-		always {
-			//
-		}
-		failure {
-			//
-		}
-	}
-
 }
 
